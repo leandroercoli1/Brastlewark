@@ -1,0 +1,14 @@
+@import 'base/_variables.scss';
+
+// GLOBAL
+body {
+  color: $default-font-color;
+  background: $default-background;
+  cursor: default;
+}
+
+@import 'layout/_header.scss';
+@import 'layout/_footer.scss';
+
+@import 'modules/_homepage.scss';
+@import 'modules/_message-paper.scss';

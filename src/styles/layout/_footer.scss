@@ -1,0 +1,14 @@
+@import "../base/_variables.scss";
+@import "../base/_placeholders.scss";
+@import "../base/_mixins.scss";
+
+.footer {
+  grid-area: footer;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+  background-color: $dark-grey;
+  color: $white;
+}
