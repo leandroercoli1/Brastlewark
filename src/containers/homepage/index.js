@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getCensusData } from "redux/slices";
-import headerlogo from "assets/img/logo.png";
+import Header from "components/header";
 import Population from "components/population";
 
 function Homepage() {
@@ -13,14 +13,10 @@ function Homepage() {
 
   return (
     <div className="container">
-      <div className="header">
-        <div className="header-brand">
-          <img src={headerlogo} alt="logo" className="header-logo" />
-          <h2>Brastlewark</h2>
-        </div>
-      </div>
+      <Header />
       <div className="content">
-        <h2 style={{ color: "white" }}>Welcome to Brastlewark!</h2>
+        <h1>Welcome to Brastlewark!</h1>
+        <p>Hey there! Welcome to our town. Connect with other people and start trading today.</p>
         <Population />
       </div>
     </div>

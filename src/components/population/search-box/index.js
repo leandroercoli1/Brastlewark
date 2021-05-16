@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import SearchIcon from "components/icons/search-icon";
 import Alert from "components/alert";
@@ -6,12 +6,14 @@ import Alert from "components/alert";
 const placeholder = "Search on Brastlewark";
 
 function SearchBox({ onSearch }) {
-  const { data } = useSelector((state) => state.census);
+  const { data, friends } = useSelector((state) => state.census);
   const [keyword, setKeyword] = useState("");
+  const [showFriendsOnly, setShowFriendsOnly] = useState(false);
   const [noResultsFound, setNoResultsFound] = useState(false);
 
   function onChange(event) {
     setKeyword(event.target.value);
+    if (noResultsFound) setNoResultsFound(false);
   }
 
   function onClear() {
@@ -20,20 +22,33 @@ function SearchBox({ onSearch }) {
     onSearch(data);
   }
 
+  const friendsFilter = useMemo(
+    () =>
+      showFriendsOnly
+        ? data.filter((gnome) => friends.includes(gnome.id))
+        : data,
+    [data, friends, showFriendsOnly]
+  );
+
+  function toggleFriendsCheckbox() {
+    setShowFriendsOnly(!showFriendsOnly);
+  }
+
   function onSubmit(e) {
     e.preventDefault();
     const word = keyword.trim();
-    if (word.length > 0) {
-      const searchResults = data.filter(
-        (gnome) =>
-          gnome.name.toLowerCase().includes(word.toLowerCase()) ||
-          gnome.professions.find((profession) =>
-            profession.toLowerCase().includes(word.toLowerCase())
+    const searchResults =
+      word.length > 0
+        ? friendsFilter.filter(
+            (gnome) =>
+              gnome.name.toLowerCase().includes(word.toLowerCase()) ||
+              gnome.professions.find((profession) =>
+                profession.toLowerCase().includes(word.toLowerCase())
+              )
           )
-      );
-      if (!searchResults.length) setNoResultsFound(true);
-      onSearch(searchResults);
-    }
+        : friendsFilter;
+    if (!searchResults.length) setNoResultsFound(true);
+    onSearch(searchResults);
   }
 
   return (
@@ -46,12 +61,20 @@ function SearchBox({ onSearch }) {
           value={keyword}
           placeholder={placeholder}
         />
-        {keyword.length > 0 && (
+        {(keyword.length > 0 || noResultsFound) && (
           <div className="search-box-clear-button" onClick={onClear}>
             <SearchIcon />
           </div>
         )}
       </div>
+      <label>
+        <input
+          type="checkbox"
+          value={showFriendsOnly}
+          onChange={toggleFriendsCheckbox}
+        />
+        Show friends only
+      </label>
       {noResultsFound && <Alert>No results found for "{keyword}"</Alert>}
     </form>
   );

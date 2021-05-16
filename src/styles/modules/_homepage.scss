@@ -3,7 +3,7 @@
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: $header-height 1fr ;
+  grid-template-rows: $header-height 1fr;
   gap: 0px 0px;
   grid-template-areas:
     "header"
@@ -16,4 +16,9 @@
   overflow-x: hidden;
   overflow-y: auto;
   background-color: $black;
+  color: $white;
+
+  h1 {
+    font-weight: lighter;
+  }
 }

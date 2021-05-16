@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function useInfiniteScroll(
   listData = [],
-  elementsPerPage = 6
+  elementsPerPage = 20
 ) {
   const [data, setData] = useState(listData);
   const [currentStartIndex, setCurrentStartIndex] = useState(0);

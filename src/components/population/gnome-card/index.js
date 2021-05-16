@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useMemo } from "react";
 import VerifiedIcon from "components/icons/verified-icon";
+import { useDispatch, useSelector } from "react-redux";
+import { addFriend, removeFriend } from "redux/slices";
 
 function GnomeCard({ gnome }) {
+  const dispatch = useDispatch();
+  const { friends: userFriends } = useSelector((state) => state.census);
   const {
+    id,
     name,
     age,
     hair_color,
@@ -13,6 +18,15 @@ function GnomeCard({ gnome }) {
     thumbnail,
     isVerified,
   } = gnome;
+  const isFollowing = useMemo(
+    () => userFriends.includes(id),
+    [id, userFriends]
+  );
+
+  function onFollow() {
+    if (!isFollowing) dispatch(addFriend(id));
+    else dispatch(removeFriend(id));
+  }
 
   return (
     <div className="gnome-card">
@@ -34,7 +48,12 @@ function GnomeCard({ gnome }) {
             </h4>
             <small>@{name.replace(/ /g, "")}</small>
           </div>
-          <div className="follow-button">Follow</div>
+          <div
+            className={`follow-button ${isFollowing ? "active" : ""}`}
+            onClick={onFollow}
+          >
+            {isFollowing ? "Unfollow" : "Follow"}
+          </div>
         </div>
         <p
           className="gnome-card-description"

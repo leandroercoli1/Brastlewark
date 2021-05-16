@@ -8,6 +8,7 @@ const censusSlice = createSlice({
     isLoading: false,
     error: null,
     data: [],
+    friends: [],
   },
   reducers: {
     request(state) {
@@ -25,10 +26,21 @@ const censusSlice = createSlice({
       state.error = ERROR_MESSAGE;
       state.data = [];
     },
+    addFriend(state, action) {
+      state.friends.push(action.payload);
+    },
+    removeFriend(state, action) {
+      state.friends = state.friends.filter(
+        (friendId) => friendId !== action.payload
+      );
+    },
   },
 });
 
 export default censusSlice.reducer;
+
+export const addFriend = censusSlice.actions.addFriend;
+export const removeFriend = censusSlice.actions.removeFriend;
 
 const { request, success, failure } = censusSlice.actions;
 

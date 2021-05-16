@@ -11,13 +11,25 @@
   cursor: pointer;
   color: $accent-color;
   border: 1px solid $accent-color;
+  border-radius: 5px;
   padding: 0.5rem;
   font-size: 1rem;
   font-weight: bold;
+  user-select: none;
 
-  &:hover {
+  &:hover,
+  &.active {
     color: $white;
     border: 1px solid $accent-color;
     background-color: rgba($accent-color, 0.5);
   }
+}
+
+%button-text {
+  cursor: pointer;
+  color: $accent-color;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  user-select: none;
 }

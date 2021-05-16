@@ -7,11 +7,13 @@
   background-color: $black;
   color: $white;
   border-bottom: 1px solid $grey;
+  user-select: none;
 
   .header-brand {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    flex-grow: 1;
 
     .header-logo {
       width: 2rem;
@@ -21,5 +23,18 @@
     h2 {
       font-weight: 200;
     }
+  }
+
+  div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .sign-in-button {
+    @extend %button-text;
+  }
+  .sign-up-button {
+    @extend %button;
   }
 }

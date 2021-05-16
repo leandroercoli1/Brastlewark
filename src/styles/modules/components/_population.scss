@@ -5,10 +5,12 @@
   .gnome-card {
     flex-grow: 1;
     display: flex;
-    margin-bottom: 1rem;
     padding: 1rem;
-    border-bottom: 1px solid $grey;
 
+    + .gnome-card {
+      border-top: 1px solid $grey;
+    }
+    
     .gnome-card-img-container {
       flex: 0 0 100px;
       height: 100px;

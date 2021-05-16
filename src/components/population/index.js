@@ -7,7 +7,9 @@ import GnomeCard from "./gnome-card";
 import SearchBox from "./search-box";
 
 function Population() {
-  const { isLoading, error, data } = useSelector((state) => state.census);
+  const { isLoading, error, data } = useSelector(
+    (state) => state.census
+  );
   const [currentBatch, setData, canScroll, scroll] = useInfiniteScroll([]);
 
   function onSearch(searchResults) {
