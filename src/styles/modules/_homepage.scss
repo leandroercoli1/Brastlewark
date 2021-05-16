@@ -1,7 +1,3 @@
-@import "../base/_variables.scss";
-@import "../base/_placeholders.scss";
-@import "../base/_mixins.scss";
-
 .container {
   height: 100vh;
   width: 100vw;
@@ -17,5 +13,8 @@
 
 .content {
   grid-area: content;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: $black;
 }

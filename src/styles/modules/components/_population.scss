@@ -1,0 +1,68 @@
+.gnome-cards-container {
+  display: flex;
+  flex-direction: column;
+
+  .gnome-card {
+    flex-grow: 1;
+    display: flex;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid $grey;
+
+    .gnome-card-img-container {
+      flex: 0 0 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 1rem;
+
+      img {
+        @extend %img-full-cover;
+      }
+    }
+
+    @media only screen and (max-width: 400px) {
+      .gnome-card-img-container {
+        flex: 0 0 48px;
+        height: 48px;
+      }
+    }
+
+    .gnome-card-content {
+      color: $white;
+      flex-grow: 1;
+
+      .gnome-card-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h4 {
+          margin: 0;
+          margin-right: 0.5rem;
+        }
+
+        small {
+          color: $grey;
+        }
+
+        .follow-button {
+          @extend %button;
+        }
+      }
+
+      .gnome-card-description {
+        margin: 0.5rem 0 0;
+      }
+    }
+  }
+}
+
+.load-more-button-container {
+  display: flex;
+  justify-content: center;
+
+  .load-more-button {
+    @extend %button;
+  }
+}
