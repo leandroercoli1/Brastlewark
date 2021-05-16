@@ -3,12 +3,11 @@
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: $header-height 1fr $footer-height;
+  grid-template-rows: $header-height 1fr ;
   gap: 0px 0px;
   grid-template-areas:
     "header"
-    "content"
-    "footer";
+    "content";
 }
 
 .content {

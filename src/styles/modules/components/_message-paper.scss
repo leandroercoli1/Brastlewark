@@ -7,13 +7,7 @@
   }
 }
 
-.message-success {
-  background-color: mix($green, $white, 50%);
-  border: 1px solid mix($green, $white, 30%);
-  color: $green;
-}
 .message-fail {
-  background-color: mix($red, $white, 30%);
-  border: 1px solid mix($red, $white, 30%);
+  background-color: rgba($red,0.2);
   color: $red;
 }

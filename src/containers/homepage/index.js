@@ -23,9 +23,6 @@ function Homepage() {
         <h2 style={{ color: "white" }}>Welcome to Brastlewark!</h2>
         <Population />
       </div>
-      <div className="footer">
-        <h6>Contact information</h6>
-      </div>
     </div>
   );
 }

@@ -4,10 +4,15 @@ import useInfiniteScroll from "utils/useInfiniteScroll";
 import Loader from "components/loader";
 import Alert from "components/alert";
 import GnomeCard from "./gnome-card";
+import SearchBox from "./search-box";
 
 function Population() {
   const { isLoading, error, data } = useSelector((state) => state.census);
   const [currentBatch, setData, canScroll, scroll] = useInfiniteScroll([]);
+
+  function onSearch(searchResults) {
+    setData(searchResults);
+  }
 
   useEffect(() => {
     setData(data);
@@ -16,9 +21,9 @@ function Population() {
   return (
     <div>
       {isLoading && <Loader />}
-      {error && <Alert>{error}</Alert>}
       {data.length > 0 && (
         <>
+          <SearchBox onSearch={onSearch} />
           <div className="gnome-cards-container">
             {currentBatch.map((gnome, idx) => (
               <GnomeCard
@@ -36,6 +41,7 @@ function Population() {
           )}
         </>
       )}
+      {error && <Alert>{error}</Alert>}
     </div>
   );
 }

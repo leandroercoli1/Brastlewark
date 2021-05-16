@@ -1,5 +1,5 @@
 import React from "react";
-import VerifiedIcon from "components/verified-icon";
+import VerifiedIcon from "components/icons/verified-icon";
 
 function GnomeCard({ gnome }) {
   const {
