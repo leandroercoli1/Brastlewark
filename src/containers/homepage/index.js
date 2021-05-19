@@ -4,6 +4,7 @@ import { getCensusData } from "redux/slices";
 import Header from "components/header";
 import Population from "components/population";
 import UserSidebar from "components/user-sidebar";
+import GithubBadge from "components/common/github-badge";
 
 function Homepage() {
   const dispatch = useDispatch();
@@ -15,8 +16,6 @@ function Homepage() {
 
   const onUserBadgeClick = () => setIsSidebarOpen(true);
   const onCloseUserSidebar = () => setIsSidebarOpen(false);
-
-  console.log("isSidebarOpen", isSidebarOpen);
 
   return (
     <div className="container">
@@ -30,6 +29,7 @@ function Homepage() {
         <Population />
         <UserSidebar isOpen={isSidebarOpen} onClose={onCloseUserSidebar} />
       </div>
+      <GithubBadge />
     </div>
   );
 }
