@@ -16,25 +16,21 @@
     flex-grow: 1;
 
     .header-logo {
-      width: 2rem;
-      height: 2rem;
-    }
-
-    h2 {
-      font-weight: 200;
+      height: calc(#{$header-height} - 1.5rem);
+      width: calc(#{$header-height} - 1.5rem);
     }
   }
+}
 
-  div:nth-child(2) {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
+.user-badge {
+  height: calc(#{$header-height} - 1.5rem);
+  width: calc(#{$header-height} - 1.5rem);
+  cursor: pointer;
+  border: 2px solid $accent-color;
+  border-radius: 50%;
+  overflow: hidden;
 
-  .sign-in-button {
-    @extend %button-text;
-  }
-  .sign-up-button {
-    @extend %button;
+  img {
+    @extend %img-full-cover;
   }
 }

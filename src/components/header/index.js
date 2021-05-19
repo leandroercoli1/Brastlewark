@@ -1,17 +1,15 @@
 import React from "react";
 import headerlogo from "assets/img/logo.png";
+import UserBadge from "../common/user-badge";
 
-function Header() {
+function Header({ onUserBadgeClick }) {
   return (
     <div className="header">
       <div className="header-brand">
         <img src={headerlogo} alt="logo" className="header-logo" />
         <h2>Brastlewark</h2>
       </div>
-      <div>
-        <div className="sign-in-button">Sign In</div>
-        <div className="sign-up-button active">Sign Up</div>
-      </div>
+      <UserBadge onClick={onUserBadgeClick} />
     </div>
   );
 }

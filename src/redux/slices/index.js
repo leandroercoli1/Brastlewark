@@ -9,6 +9,7 @@ const censusSlice = createSlice({
     error: null,
     data: [],
     friends: [],
+    selectedGnome: null,
   },
   reducers: {
     request(state) {
@@ -31,8 +32,11 @@ const censusSlice = createSlice({
     },
     removeFriend(state, action) {
       state.friends = state.friends.filter(
-        (friendId) => friendId !== action.payload
+        (friend) => friend.id !== action.payload
       );
+    },
+    selectGnome(state, action) {
+      state.selectedGnome = action.payload;
     },
   },
 });
@@ -41,6 +45,7 @@ export default censusSlice.reducer;
 
 export const addFriend = censusSlice.actions.addFriend;
 export const removeFriend = censusSlice.actions.removeFriend;
+export const selectGnome = censusSlice.actions.selectGnome;
 
 const { request, success, failure } = censusSlice.actions;
 

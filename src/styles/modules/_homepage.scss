@@ -15,10 +15,6 @@
   padding: 0 1rem 1rem;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: $black;
-  color: $white;
-
-  h1 {
-    font-weight: lighter;
-  }
+  background-color: $default-background;
+  color: $default-font-color;
 }

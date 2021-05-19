@@ -12,9 +12,9 @@
   color: $accent-color;
   border: 1px solid $accent-color;
   border-radius: 5px;
-  padding: 0.5rem;
+  padding: 0 1rem;
   font-size: 1rem;
-  font-weight: bold;
+  // font-weight: bold;
   user-select: none;
 
   &:hover,
@@ -22,6 +22,11 @@
     color: $white;
     border: 1px solid $accent-color;
     background-color: rgba($accent-color, 0.5);
+  }
+
+  &.active:hover {
+    border: 1px solid $red;
+    background-color: rgba($red, 0.5);
   }
 }
 
@@ -32,4 +37,9 @@
   font-size: 1rem;
   font-weight: bold;
   user-select: none;
+}
+
+%button-icon {
+  cursor: pointer;
+  display: flex;
 }
