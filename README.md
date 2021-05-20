@@ -13,9 +13,9 @@ http://brastlewark-leandroercoli.herokuapp.com/
 - Axios
 
 ## Walkthrough
-The application displays a list of gnomes on the city on the homepage, allowing the user to search for a gnome by name or profession. A pill option is also available to filter the search by friend status.
+The application displays a list of gnomes on the city, allowing the user to search for a gnome by name or profession. A pill option is also available to filter the search by friend status.
 
-To avoid sluggishness the list is displayed by batches of 20, showing a "Load more" button at the end of the last item visible to expand the list. A custom hook was written for this logic. 
+To avoid sluggishness, the list is displayed by batches of 20 items, showing a "Load more" button, at the end of the last visible item, to expand the list. A custom hook was written for this. 
 
 On the list, each gnome card displays their picture, name, username and list of professions. A "Follow" button allows the user to become friends with the gnome (this information is saved on Redux and lost on refresh). A click on a gnome card opens a sliding sidebar with more information about them, like weight, height, age and hair color. The gnome's friends list is also available (the gnome card component was reused for this list). The sidebar is responsive and should be full width on smaller screens. 
 
