@@ -1,7 +1,5 @@
-# Brastlewark - AXA frontend code assessment
+# Brastlewark
 by @leandroercoli
-
-This web application was written as a frontend code assessment for AXA. 
 
 ## See it running
 http://brastlewark-leandroercoli.herokuapp.com/
