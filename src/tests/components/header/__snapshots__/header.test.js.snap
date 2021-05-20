@@ -2,14 +2,14 @@
 
 exports[`renders header correctly renders header correctly 1`] = `
 <div
-  className="header"
+  class="header"
 >
   <div
-    className="header-brand"
+    class="header-brand"
   >
     <img
       alt="logo"
-      className="header-logo"
+      class="header-logo"
       src="logo.png"
     />
     <h2>
@@ -17,7 +17,7 @@ exports[`renders header correctly renders header correctly 1`] = `
     </h2>
   </div>
   <div
-    className="user-badge"
+    class="user-badge"
     data-testid="user-badge"
   >
     <img

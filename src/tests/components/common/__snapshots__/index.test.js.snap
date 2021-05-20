@@ -2,7 +2,7 @@
 
 exports[`renders common components correctly renders GitHub badge correctly 1`] = `
 <div
-  className="github-badge"
+  class="github-badge"
 >
   <a
     aria-current="true"
@@ -20,7 +20,8 @@ exports[`renders common components correctly renders GitHub badge correctly 1`] 
 
 exports[`renders common components correctly renders alert correctly 1`] = `
 <div
-  className="message-container message-fail"
+  class="message-container message-fail"
+  data-testid="alert"
 >
   Alert message text
 </div>
@@ -28,13 +29,13 @@ exports[`renders common components correctly renders alert correctly 1`] = `
 
 exports[`renders common components correctly renders loader correctly 1`] = `
 <div
-  className="loader-container"
+  class="loader-container"
 >
   <div
-    className="loader-bar-wrapper"
+    class="loader-bar-wrapper"
   >
     <div
-      className="loader-bar"
+      class="loader-bar"
     />
   </div>
 </div>
@@ -42,7 +43,7 @@ exports[`renders common components correctly renders loader correctly 1`] = `
 
 exports[`renders common components correctly renders user badge correctly 1`] = `
 <div
-  className="user-badge"
+  class="user-badge"
   data-testid="user-badge"
 >
   <img

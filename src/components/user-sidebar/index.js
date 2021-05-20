@@ -25,7 +25,7 @@ function UserSidebar({ isOpen, onClose }) {
         <div className="divider" />
         <h2>My friends ({friends.length})</h2>
         {friends.length > 0 ? (
-          <div className="gnome-cards-container" onClick={onClose}>
+          <div className="gnome-cards-container">
             {friends.map((gnome) => (
               <GnomeCard gnome={gnome} key={`gnome-${gnome.id}`} />
             ))}
