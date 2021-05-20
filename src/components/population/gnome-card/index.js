@@ -29,7 +29,11 @@ function GnomeCard({ gnome }) {
   }
 
   return (
-    <div className="gnome-card" onClick={onCardClick}>
+    <div
+      className="gnome-card"
+      onClick={onCardClick}
+      data-testid={`gnome-card-${id}`}
+    >
       <div className="gnome-card-img-container">
         <img src={thumbnail} alt="gnome-img" />
       </div>

@@ -52,7 +52,7 @@ function SearchBar({ onSearch }) {
   }, [filteredData, onSearch]);
 
   return (
-    <div className="search-bar">
+    <div className="search-bar" data-testid="search-bar">
       <div className="search-box">
         <input
           className="search-box-input"

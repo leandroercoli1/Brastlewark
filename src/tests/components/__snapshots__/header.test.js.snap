@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders header correctly renders header correctly 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="header-brand"
+  >
+    <img
+      alt="logo"
+      className="header-logo"
+      src="logo.png"
+    />
+    <h2>
+      Brastlewark
+    </h2>
+  </div>
+  <div
+    className="user-badge"
+    data-testid="user-badge"
+  >
+    <img
+      alt="logo"
+      src="hero.jpg"
+    />
+  </div>
+</div>
+`;

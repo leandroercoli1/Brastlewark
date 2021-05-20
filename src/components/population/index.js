@@ -37,7 +37,11 @@ function Population() {
             </div>
             {canScroll && (
               <div className="load-more-button-container">
-                <div className="load-more-button" onClick={scroll}>
+                <div
+                  className="load-more-button"
+                  onClick={scroll}
+                  data-testid="load-more-button"
+                >
                   Load more
                 </div>
               </div>

@@ -1,61 +1,61 @@
- .profile-header {
-    height: 64px;
-    margin: 1rem 0;
-    padding: 0 1rem;
+.profile-header {
+  height: 64px;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-img {
+  height: 30vh;
+  width: 30vh;
+  border-radius: 50%;
+  border: 5px solid $accent-color;
+  overflow: hidden;
+  margin: 0 auto 1rem;
+
+  img {
+    @extend %img-full-cover;
+  }
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+
+  .stat {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    margin: 2px;
+    border-radius: 5px;
+    background-color: rgba($accent-color, 0.5);
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-  }
 
-  .profile-img {
-    height: 30vh;
-    width: 30vh;
-    border-radius: 50%;
-    border: 5px solid $accent-color;
-    overflow: hidden;
-    margin: 0 auto 1rem;
-
-    img {
-      @extend %img-full-cover;
-    }
-  }
-
-  .stats-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-
-    .stat {
-      padding: 1rem 1.5rem;
-      margin: 2px;
-      border-radius: 5px;
-      background-color: rgba($accent-color, 0.5);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      span:nth-child(1) {
-        font-size: 2rem;
-        font-weight: bold;
-      }
-
-      @media screen and (max-width: 768px) {
-        width: 30%;
-      }
-    }
-  }
-
-  .professions-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-
-    .profession {
+    span:nth-child(1) {
+      font-size: 2rem;
       font-weight: bold;
-      padding: 10px;
-      margin: 5px;
     }
+
+    @media screen and (max-width: 768px) {
+      width: 30%;
+    }
+  }
+}
+
+.professions-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+
+  .profession {
+    font-weight: bold;
+    padding: 10px;
+    margin: 5px;
+  }
 }
 
 .divider {

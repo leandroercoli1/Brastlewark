@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders common components correctly renders GitHub badge correctly 1`] = `
+<div
+  className="github-badge"
+>
+  <a
+    aria-current="true"
+    href="https://github.com/leandroercoli/AxaTest"
+    rel="noreferrer"
+    target="_blank"
+  >
+    <img
+      alt="github-icon"
+      src="github-icon.png"
+    />
+  </a>
+</div>
+`;
+
+exports[`renders common components correctly renders alert correctly 1`] = `
+<div
+  className="message-container message-fail"
+>
+  Alert message text
+</div>
+`;
+
+exports[`renders common components correctly renders loader correctly 1`] = `
+<div
+  className="loader-container"
+>
+  <div
+    className="loader-bar-wrapper"
+  >
+    <div
+      className="loader-bar"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders common components correctly renders user badge correctly 1`] = `
+<div
+  className="user-badge"
+  data-testid="user-badge"
+>
+  <img
+    alt="logo"
+    src="hero.jpg"
+  />
+</div>
+`;

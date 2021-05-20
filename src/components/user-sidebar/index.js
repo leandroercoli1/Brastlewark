@@ -8,7 +8,10 @@ function UserSidebar({ isOpen, onClose }) {
   const { friends = [] } = useSelector((state) => state.census);
 
   return (
-    <div className={`sidebar-slide ${isOpen ? "open" : ""}`}>
+    <div
+      className={`sidebar-slide ${isOpen ? "open" : ""}`}
+      data-testid="user-sidebar"
+    >
       <div className="sidebar-content">
         <div className="profile-header">
           <h2>Guest user</h2>
