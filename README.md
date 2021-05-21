@@ -26,7 +26,7 @@ Different types of tests were included: unit and integration testing of some key
 
 Clone this repository:
 ```
-git clone git@github.com:leandroercoli/AxaTest.git
+git clone git@github.com:leandroercoli1/Brastlewark.git
 ```
 Install npm packages:
 ```

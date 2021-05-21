@@ -5,7 +5,7 @@ function GithubBadge() {
   return (
     <div className="github-badge">
       <a
-        href={"https://github.com/leandroercoli/Brastlewark"}
+        href={"https://github.com/leandroercoli1/Brastlewark.git"}
         target="_blank"
         rel="noreferrer"
         aria-current="true"
