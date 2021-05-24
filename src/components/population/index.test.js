@@ -1,32 +1,20 @@
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { Provider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
-import censusReducer from "redux/slices";
+import { fireEvent, screen, waitFor } from "@testing-library/react";
 import Population from "components/population";
-import { longListOfGnomes } from "../../utils";
+import { longListOfGnomes } from "tests/mocks/data";
+import { renderWithStore } from "tests";
 
 describe("gnomes list", () => {
   describe("available data", () => {
     beforeEach(() => {
-      const store = configureStore({
-        reducer: {
-          census: censusReducer,
-        },
-        preloadedState: {
-          census: {
-            isLoading: false,
-            error: null,
-            data: longListOfGnomes,
-            friends: [],
-            selectedGnome: null,
-          },
+      renderWithStore(Population, {
+        census: {
+          isLoading: false,
+          error: null,
+          data: longListOfGnomes,
+          friends: [],
+          selectedGnome: null,
         },
       });
-      render(
-        <Provider store={store}>
-          <Population />
-        </Provider>
-      );
     });
     it("displays search bar", async () => {
       const searchBar = await screen.findByTestId("search-bar");
@@ -60,32 +48,22 @@ describe("gnomes list", () => {
   });
   describe("no available data", () => {
     beforeEach(() => {
-      const store = configureStore({
-        reducer: {
-          census: censusReducer,
-        },
-        preloadedState: {
-          census: {
-            isLoading: false,
-            error: "Server error",
-            data: [],
-            friends: [],
-            selectedGnome: null,
-          },
+      renderWithStore(Population, {
+        census: {
+          isLoading: false,
+          error: "Server error",
+          data: [],
+          friends: [],
+          selectedGnome: null,
         },
       });
-      render(
-        <Provider store={store}>
-          <Population />
-        </Provider>
-      );
     });
     it("displays error message", async () => {
       const alert = await screen.findByTestId("alert");
       expect(alert).toBeInTheDocument();
     });
     it("no gnomes are displayed", async () => {
-      const gnomeCards =  screen.queryAllByTestId(/gnome-card-[0-9]*/)
+      const gnomeCards = screen.queryAllByTestId(/gnome-card-[0-9]*/);
       expect(gnomeCards.length).toEqual(0);
     });
   });

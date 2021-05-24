@@ -1,15 +1,16 @@
 import React from "react";
 import { fireEvent, screen, render } from "@testing-library/react";
+import { renderWithStore } from "tests";
 import Header from "components/header";
-import App from "App";
+import Homepage from "containers/homepage";
 
 describe("renders header correctly", () => {
   it("renders header correctly", () => {
-    const {container} = render(<Header/>);
+    const { container } = render(<Header />);
     expect(container.firstChild).toMatchSnapshot();
   });
   it("user sidebar opens on user badge click", async () => {
-    render(<App />);
+    renderWithStore(Homepage);
     const userBadge = screen.getByTestId("user-badge");
     expect(userBadge).toBeInTheDocument();
     const userSidebar = screen.getByTestId("user-sidebar");

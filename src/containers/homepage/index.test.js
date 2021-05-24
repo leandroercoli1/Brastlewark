@@ -1,21 +1,18 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { screen, waitFor } from "@testing-library/react";
 import axios from "axios";
-import App from "../App";
-import { longListOfGnomes } from "./utils";
+import Homepage from ".";
+import { axiosSetup, axiosClear } from "tests/mocks";
+import { renderWithStore } from "tests";
 
 jest.mock("axios");
 
 beforeEach(() => {
-  axios.get.mockResolvedValue({
-    data: {
-      Brastlewark: longListOfGnomes,
-    },
-  });
-  render(<App />);
+  axiosSetup();
+  renderWithStore(Homepage);
 });
 
 afterEach(() => {
-  jest.clearAllMocks();
+  axiosClear();
 });
 
 describe("homepage", () => {
