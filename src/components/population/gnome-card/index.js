@@ -1,11 +1,13 @@
 import React, { useMemo } from "react";
 import VerifiedIcon from "components/common/icons/verified-icon";
-import { useDispatch, useSelector } from "react-redux";
-import { addFriend, removeFriend, selectGnome } from "redux/slices";
 
-function GnomeCard({ gnome }) {
-  const dispatch = useDispatch();
-  const { friends: userFriends } = useSelector((state) => state.census);
+function GnomeCard({
+  gnome,
+  userFriends = [],
+  onAddFriend,
+  onRemoveFriend,
+  onSelectGnome,
+}) {
   const {
     id,
     name = "",
@@ -20,12 +22,12 @@ function GnomeCard({ gnome }) {
 
   function onFollow(e) {
     e.stopPropagation();
-    if (!isFollowing) dispatch(addFriend(gnome));
-    else dispatch(removeFriend(id));
+    if (!isFollowing) onAddFriend(gnome);
+    else onRemoveFriend(id);
   }
 
   function onCardClick() {
-    dispatch(selectGnome(gnome));
+    onSelectGnome(gnome);
   }
 
   return (

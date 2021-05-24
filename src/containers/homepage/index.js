@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getCensusData } from "redux/slices";
 import Header from "components/header";
-import Population from "components/population";
+import Population from "containers/population";
 import UserSidebar from "components/user-sidebar";
 import GithubBadge from "components/common/github-badge";
 
 function Homepage() {
   const dispatch = useDispatch();
+  const { friends = [] } = useSelector((state) => state.census);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
@@ -27,7 +28,11 @@ function Homepage() {
           trading today.
         </p>
         <Population />
-        <UserSidebar isOpen={isSidebarOpen} onClose={onCloseUserSidebar} />
+        <UserSidebar
+          isOpen={isSidebarOpen}
+          onClose={onCloseUserSidebar}
+          friends={friends}
+        />
       </div>
       <GithubBadge />
     </div>

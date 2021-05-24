@@ -1,12 +1,10 @@
 import React, { useMemo, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import ClearIcon from "components/common/icons/clear-icon";
 import Alert from "components/common/alert";
 
 const placeholder = "Search on Brastlewark";
 
-function SearchBar({ onSearch }) {
-  const { data, friends } = useSelector((state) => state.census);
+function SearchBar({ data, friends, onSearch }) {
   const [keyword, setKeyword] = useState("");
   const [showFriendsOnly, setShowFriendsOnly] = useState(false);
   const [noResultsFound, setNoResultsFound] = useState(false);

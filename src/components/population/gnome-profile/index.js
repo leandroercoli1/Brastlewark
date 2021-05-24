@@ -1,11 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { useSelector } from "react-redux";
 import ClearIcon from "components/common/icons/clear-icon";
 import VerifiedIcon from "components/common/icons/verified-icon";
 import GnomeCard from "../gnome-card";
 
-function GnomeProfile() {
-  const { selectedGnome, data } = useSelector((state) => state.census);
+function GnomeProfile({ selectedGnome, data }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const {

@@ -1,5 +1,5 @@
 import { fireEvent, screen, waitFor } from "@testing-library/react";
-import Population from "components/population";
+import Population from "containers/population";
 import { longListOfGnomes } from "tests/mocks/data";
 import { renderWithStore } from "tests";
 
